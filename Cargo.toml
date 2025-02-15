@@ -1,0 +1,14 @@
+[package]
+name = "ts_cpp_analyzer"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "symbol_analyzer"
+path = "src/analyzer/lib.rs"
+
+[dependencies]
+tree-sitter = "0.24.7"
+tree-sitter-cpp = "0.23.4"
+streaming-iterator = "0.1.9"
+lazy_static = "1.5"
