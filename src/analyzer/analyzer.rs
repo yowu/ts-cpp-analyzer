@@ -73,15 +73,19 @@ impl<'code> SymbolAnalyzer<'code> {
     fn print_node(&self, node: &Node, indent: usize) {
         let indent_str = "  ".repeat(indent);
         let node_text = self.get_node_text(&node);
-        println!(
-            "{}{} [{} - {}] - sexp {}: {:?}",
-            indent_str,
-            node.kind(),
-            node.start_byte(),
-            node.end_byte(),
-            node.to_sexp(),
-            node_text
-        );
+        if node.kind() != "translation_unit" {
+            println!(
+                "{}{} [{} - {}]\n{}sexp: {}\n{}text: {:?}",
+                indent_str,
+                node.kind(),
+                node.start_byte(),
+                node.end_byte(),
+                indent_str,
+                node.to_sexp(),
+                indent_str,
+                node_text
+            );
+        }
 
         for child in node.children(&mut node.walk()) {
             self.print_node(&child, indent + 1);
