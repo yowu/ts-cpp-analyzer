@@ -1,4 +1,4 @@
-use symbol_analyzer::{QueryManager, QueryManagerBuilder, QueryPattern};
+use crate::{QueryManager, QueryManagerBuilder, QueryPattern};
 
 use lazy_static::lazy_static;
 use std::sync::Arc;

@@ -1,11 +1,23 @@
 [package]
 name = "ts_cpp_analyzer"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
+description = "A C++ code analyzer library built with tree-sitter"
+authors = ["gnoywu@gmail.com"]
+repository = "https://github.com/yourusername/ts-cpp-analyzer"
+license = "MIT"
 
 [lib]
 name = "symbol_analyzer"
-path = "src/analyzer/lib.rs"
+path = "src/lib.rs"
+
+[[example]]
+name = "simple_analyzer"
+path = "examples/simple_analyzer.rs"
+
+[[example]]
+name = "custom_queries"
+path = "examples/custom_queries.rs"
 
 [dependencies]
 tree-sitter = "0.24.7"

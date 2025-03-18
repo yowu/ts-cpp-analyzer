@@ -75,7 +75,7 @@ impl<'code> SymbolAnalyzer<'code> {
         let node_text = self.get_node_text(&node);
         if node.kind() != "translation_unit" {
             println!(
-                "{}{} [{} - {}]\n{}sexp: {}\n{}text: {:?}",
+                "{}{} [{} - {}]\n{}sexp: {}\n{}text: {}",
                 indent_str,
                 node.kind(),
                 node.start_byte(),
@@ -96,6 +96,7 @@ impl<'code> SymbolAnalyzer<'code> {
         self.print_node(&self.root_node(), 0);
     }
 
+    /// Get the position from the start of the pattern in the code plus a given offset.
     pub fn get_position(&self, pat: &str, offset: usize) -> Option<usize> {
         self.code.find(pat).map(|pos| pos + offset)
     }
