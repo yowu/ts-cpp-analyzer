@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2024"
 description = "A C++ code analyzer library built with tree-sitter"
 authors = ["gnoywu@gmail.com"]
-repository = "https://github.com/yourusername/ts-cpp-analyzer"
+repository = "https://github.com/yowu/ts-cpp-analyzer"
 license = "MIT"
 
 [lib]
